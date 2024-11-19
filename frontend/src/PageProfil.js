@@ -1,4 +1,5 @@
 import './App.css';
+import {Link} from 'react-router-dom';
 import { useState } from 'react';
 import HomePage from './Images/home-btn.png';
 import Challenges from './Images/Challenge-btn.png';
@@ -10,18 +11,18 @@ import Retour from './Images/Retour.png';
 import ProfileCard from './Images/ProfileCard.png';
 
 function ImageBarre({ image, link, NouvellePage}) {
-    return (
-      <div>
-        <a href={link} target="_blank" rel="noopener noreferrer">
-          <img className='barre-image'
-            src={image} 
-            alt={NouvellePage} 
-            style={{ cursor: 'pointer' }} 
-          />
-        </a>
-      </div>
-    );
-  }
+  return (
+    <div>
+      <Link to={link}>
+        <img className='barre-image'
+          src={image} 
+          alt={NouvellePage} 
+          style={{ cursor: 'pointer' }} 
+        />
+      </Link>
+    </div>
+  );
+}
   
   function BarreLaterale({ toggleVisibility, isVisible }) {
     return (
@@ -32,11 +33,11 @@ function ImageBarre({ image, link, NouvellePage}) {
           onClick={toggleVisibility}
           className="toggle-button"
         />
-        <ImageBarre image={HomePage} link="https://www.larousse.fr/dictionnaires/francais/accueil/569" NouvellePage="HomePage" />
+        <ImageBarre image={HomePage} link="/PagePrincipale" NouvellePage="PagePrincipale" />
         <ImageBarre image={Challenges} link="https://www.larousse.fr/dictionnaires/francais/challenge/14488" NouvellePage="Challenges" />
         <ImageBarre image={Composer} link="https://www.larousse.fr/dictionnaires/francais/composer/17742" NouvellePage="Composer" />
         <ImageBarre image={Bibliothèque} link="https://www.larousse.fr/dictionnaires/francais/bibliothèque/9064" NouvellePage="Bibliothèque" />
-        <ImageBarre image={Profil} link="https://www.larousse.fr/dictionnaires/francais/profil/64166" NouvellePage="Profil" />
+        <ImageBarre image={Profil} link="/PageProfil" NouvellePage="Profil" />
       </div>
     );
   }
@@ -66,11 +67,13 @@ function ImageBarre({ image, link, NouvellePage}) {
     );
   }
 
-  export default function ProfilePage() {
+
+
+  export default function PageProfil() {
     return(
       <div className='entire-page'>
         <ToggleElement></ToggleElement>
-        <h1 className="titre">Profil</h1>
+        <h1 className="titre">Mon Profil</h1>
       </div>
     );
   }
