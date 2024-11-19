@@ -67,6 +67,24 @@ function ImageBarre({ image, link, NouvellePage}) {
     );
   }
 
+  function InfoProfil({ prenom, nom, username, datenaissance, pays, mail, telephone }) {
+    return (
+      <div className="image-fond-profil">
+        <img src={ProfileCard} alt="Cadre" className="background-profil" />
+        <div className="texte-profil">
+          <h1 className="nom-profil">{prenom}</h1>
+          <p className="nom-profil">{nom}</p>
+          <br />
+          <br />
+          <p className="info-profil">{username}</p>
+          <p className="info-profil">{datenaissance}</p>
+          <p className="info-profil">{pays}</p>
+          <p className="info-profil">{mail}</p>
+          <p className="info-profil">{telephone}</p>
+        </div>
+      </div>
+    );
+  }
 
 
   export default function PageProfil() {
@@ -74,6 +92,7 @@ function ImageBarre({ image, link, NouvellePage}) {
       <div className='entire-page'>
         <ToggleElement></ToggleElement>
         <h1 className="titre">Mon Profil</h1>
+        <InfoProfil nom="Maroni" prenom="Isée" username="isée.maroni" datenaissance="01/01/2000" pays="France" mail="isée.maroni@gmail.com" telephone="+33 7 68 12 53 21" />
       </div>
     );
   }
