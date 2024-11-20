@@ -39,34 +39,34 @@ function PaletteLecons() {
 function ImageMap({ titre, id }) {
   return (
     <div>
-      <div className='section'>
+      <div className="section">
         <h1 id={id}>{titre}</h1>
       </div>
-      <div className='main-content'>
+      <div className="main-content">
         <img
           src={porteecliquable}
           alt="portee-cliquable"
           useMap="#porteecliquable"
-          style={{ display: 'block', width: 'auto', height: 'auto' }}
+          style={{ display: "block", width: "auto", height: "auto" }} // Utiliser "100%" pour la largeur
         />
         <map name="porteecliquable">
           <area
             shape="circle"
-            coords="433,265,21"
+            coords="351,189,23"
             alt="Zone 1"
             href="https://www.apprendrelesolfege.com/clef-de-sol"
             target="_blank"
           />
           <area
             shape="circle"
-            coords="694, 154, 23"
+            coords="568,106,22"
             alt="Zone 2"
             href="https://www.apprendrelesolfege.com/clef-de-fa"
             target="_blank"
           />
           <area
             shape="circle"
-            coords="1042, 208, 25"
+            coords="863,148,26"
             alt="Zone 3"
             href="https://www.apprendrelesolfege.com/clef-d-ut"
             target="_blank"
