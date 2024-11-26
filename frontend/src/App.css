@@ -1,4 +1,10 @@
+@font-face {
+  font-family: 'Adumu'; 
+  src: url('Typo/Adumu.ttf') format('woff2'),
+}
+
 .section {
+  font-family: 'Adumu';
   color:#3a3a3a ;
   margin: 20px ;
   padding-left : 50px ;
@@ -62,6 +68,7 @@
 }
 
 .titre {
+  font-family: 'Adumu';
   color:#3a3a3a;
   text-align:center;
   font-size: 80px;
@@ -90,6 +97,7 @@
 }
 
 .nom-profil {
+  font-family: 'Adumu';
   font-size: 100 px;
   font-weight: bolder;
   text-align: center;
