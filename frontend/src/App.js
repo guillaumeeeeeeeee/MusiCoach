@@ -13,19 +13,16 @@ function App() {
       <div>
         {/* Barre de navigation */}
         <nav className="navigation">
-          <Link to='/'> Page Principalel</Link>
+          <Link to='/PagePrincipale'> Page Principalel</Link>
           <Link to='/PageProfil'> Profil</Link>
           <Link to='/PageLogIn'> LogIn</Link>
           <Link to='/PageSignUp'> SignUp</Link>
-          <Link to='/PageAccueil'>Page Accueil</Link>
-          <Link to='/PagePrincipale'>Page Principale</Link>
-          <Link to='/PageProfil'>Profil</Link>
+          <Link to='/'>Page Accueil</Link>
         </nav>
 
         {/* Configuration des routes */}
         <Routes>
-          <Route path='/'element={<PagePrincipale />} />
-          <Route path='/PageAccueil'element={<PageAccueil />} />
+          <Route path='/'element={<PageAccueil />} />
           <Route path='/PagePrincipale'element={<PagePrincipale />} />
           <Route path='/PageProfil' element={<PageProfil />} />
           <Route path='/PageLogIn' element={<PageLogIn />} />
