@@ -3,3 +3,8 @@ crepe
 tensorflow
 python-multipart
 uvicorn
+pandas
+pydub
+bisect
+subprocess
+music21
