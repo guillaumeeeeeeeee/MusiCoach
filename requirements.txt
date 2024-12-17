@@ -1,3 +1,4 @@
 fastapi
 crepe
 tensorflow
+python-multipart
