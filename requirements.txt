@@ -1,3 +1,8 @@
 fastapi
 crepe
 tensorflow
+pandas
+pydub
+bisect
+subprocess
+music21
