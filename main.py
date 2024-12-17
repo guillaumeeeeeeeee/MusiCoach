@@ -1,9 +1,19 @@
 from fastapi import FastAPI, UploadFile, HTTPException
 from fastapi.responses import FileResponse
+from fastapi.middleware.cors import CORSMiddleware
 import os
 from pathlib import Path
 
 app = FastAPI()
+
+# Middleware pour autoriser les requêtes CORS
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"],
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
 
 # Répertoire temporaire pour sauvegarder les fichiers
 TEMP_DIR = Path("temp_audio")
@@ -30,3 +40,7 @@ async def upload_audio(file: UploadFile):
         if input_path.exists():
             os.remove(input_path)
 
+
+if __name__ == "__main__":
+    import uvicorn
+    uvicorn.run(app, host="127.0.0.1", port=8000)
