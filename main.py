@@ -2,6 +2,7 @@ from fastapi import FastAPI, UploadFile, HTTPException
 from fastapi.responses import FileResponse
 from fastapi.middleware.cors import CORSMiddleware
 import os
+from reportlab.pdfgen import canvas
 from pathlib import Path
 
 app = FastAPI()
@@ -15,26 +16,43 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
-# Répertoire temporaire pour sauvegarder les fichiers
-TEMP_DIR = Path("temp_audio")
+# Répertoire temporaire 
+TEMP_DIR = Path("temp_files")
 TEMP_DIR.mkdir(exist_ok=True)
+AUDIO_DIR = TEMP_DIR / "audio"
+PDF_DIR = TEMP_DIR / "pdf"
+AUDIO_DIR.mkdir(exist_ok=True)
+PDF_DIR.mkdir(exist_ok=True)
+
+def create_pdf(pdf_path, message):
+    """Créer un PDF simple avec un message."""
+    c = canvas.Canvas(str(pdf_path))  # Création de l'objet Canvas
+    c.drawString(100, 750, "Résultats du traitement audio")  # Titre
+    c.drawString(100, 730, message)  # Message principal
+    c.save() 
 
 @app.post("/upload-audio/")
 async def upload_audio(file: UploadFile):
     if not file.filename.endswith((".mp3", ".wav", ".ogg", ".m4a")):
         raise HTTPException(status_code=400, detail="Unsupported file format")
     
-    input_path = TEMP_DIR / file.filename
+    audio_path = AUDIO_DIR / file.filename
+    pdf_path = PDF_DIR / (file.filename + ".pdf")
 
     try:
         # Sauvegarde temporaire du fichier uploadé
-        with open(input_path, "wb") as buffer:
+        with open(audio_path, "wb") as buffer:
             buffer.write(await file.read())
+
+        # Création du pdf
+        create_pdf(pdf_path, f"Traitement du fichier audio : {file.filename}")
+
         
-        # Renvoyer l'audio tel quel
-        return FileResponse(path=input_path, filename=file.filename)
+        # Renvoyer pdf
+        return FileResponse(path=pdf_path, filename=pdf_path.name)
     except Exception as e:
-        raise HTTPException(status_code=500, detail=f"Error processing audio: {str(e)}")
+        print(e)
+        raise HTTPException(status_code=500, detail=f"Error processing file: {str(e)}")
 
 
 if __name__ == "__main__":

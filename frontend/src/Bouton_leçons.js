@@ -36,14 +36,14 @@ function App() {
                 const url = window.URL.createObjectURL(blob);
                 const link = document.createElement("a");
                 link.href = url;
-                link.setAttribute("download", selectedFile.name); // Use the same name as uploaded
+                link.setAttribute("download", "resultat.pdf"); // Use the same name as uploaded
                 document.body.appendChild(link);
                 link.click();
                 link.remove();
             })
             .catch((error) => {
                 console.error("Erreur lors de l'upload :", error);
-                alert("Une erreur est survenue lors de l'envoi du fichier.");
+                alert(`Une erreur est survenue : ${error.message}`);
             })
             .finally(() => {
                 setIsUploading(false); // Upload state ends
