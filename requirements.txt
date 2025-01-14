@@ -8,3 +8,5 @@ pydub
 bisect
 subprocess
 music21
+reportlab
+
