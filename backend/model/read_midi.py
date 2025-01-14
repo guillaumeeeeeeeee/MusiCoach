@@ -81,43 +81,44 @@ def generate_partition_from_frequencies(frequencies_with_durations):
     return partition
 
 # Liste d'exemple de (fréquence, durée)
-frequencies_with_durations = [
-    (329.628, 2), (261.626, 2), (329.628, 1), (329.628, 1), (261.626, 2), 
-    (293.665, 1), (329.628, 1), (349.228, 1), (329.628, 1), (293.665, 1), 
-    (391.995, 1), (329.628, 2), (261.626, 2), (329.628, 2), (261.626, 2), 
-    (329.628, 1), (329.628, 1), (261.626, 2), (293.665, 1), (329.628, 1), 
-    (349.228, 1), (329.628, 1), (293.665, 1), (391.995, 1), (261.626, 4)
-]
+frequencies_with_durations = [(329.628, 2), (261.626, 2), (329.628, 1), (329.628, 1),
+                              (261.626, 2), (293.665, 1), (329.628, 1), (349.228, 1), 
+                              (329.628, 1), (293.665, 1), (391.995, 1), (329.628, 2), 
+                              (261.626, 2), (329.628, 2), (261.626, 2), (329.628, 1), 
+                              (329.628, 1), (261.626, 2), (293.665, 1), (329.628, 1), 
+                              (349.228, 1), (329.628, 1), (293.665, 1), (391.995, 1), 
+                              (261.626, 4)]
+
+
+def midi_generate(frequencies_with_durations) :
+    # Générer la partition
+    notes_matches = generate_partition_from_frequencies(frequencies_with_durations)
 
 
 
-# Générer la partition
-notes_matches = generate_partition_from_frequencies(frequencies_with_durations)
+    # Création de la partition
+    partition = stream.Stream()
 
+    # Ajouter un tempo (par exemple, 120 battements par minute)
+    partition.append(tempo.MetronomeMark(number=120))
 
+    # Ajouter une mesure (par exemple, en 4/4)
+    partition.append(meter.TimeSignature('4/4'))
 
-# Création de la partition
-partition = stream.Stream()
+    # Ajouter les notes à la partition
+    for notes,temps in notes_matches:
+        nouvelle_note = note.Note(notes)  # Créer une note
+        nouvelle_note.quarterLength = temps  # Durée de la note (1 correspond à une noire)
+        partition.append(nouvelle_note)
 
-# Ajouter un tempo (par exemple, 120 battements par minute)
-partition.append(tempo.MetronomeMark(number=120))
+    # Afficher la partition (dans un logiciel compatible)
+    partition.show()
 
-# Ajouter une mesure (par exemple, en 4/4)
-partition.append(meter.TimeSignature('4/4'))
+    # Exporter en fichier MIDI
+    partition.write('midi', fp='partition.mid')
 
-# Ajouter les notes à la partition
-for notes,temps in notes_matches:
-    nouvelle_note = note.Note(notes)  # Créer une note
-    nouvelle_note.quarterLength = temps  # Durée de la note (1 correspond à une noire)
-    partition.append(nouvelle_note)
-
-# Afficher la partition (dans un logiciel compatible)
-partition.show()
-
-# Exporter en fichier MIDI
-partition.write('midi', fp='partition.mid')
-
-# Exporter en fichier MusicXML (pour afficher avec MuseScore, par exemple)
-#partition.write('musicxml', fp='partition.xml')
-
-print("Partition créée et sauvegardée !")
+    # Exporter en fichier MusicXML (pour afficher avec MuseScore, par exemple)
+    #partition.write('musicxml', fp='partition.xml')
+    
+    
+midi_generate(frequencies_with_durations)
