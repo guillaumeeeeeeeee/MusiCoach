@@ -3,6 +3,6 @@ crepe
 tensorflow
 pandas
 pydub
-bisect
-subprocess
+#bisect
+#subprocess
 music21
