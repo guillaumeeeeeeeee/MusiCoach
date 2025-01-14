@@ -19,6 +19,7 @@ npm-debug.log
 yarn-error.log
 yarn-debug.log*
 yarn.lock
+build/
 
 # Mac
 .DS_Store
@@ -40,3 +41,11 @@ Desktop.ini
 *.cer
 *.jks
 *.pub
+
+# Python
+env/
+venv/
+__pycache__/
+*.pyc
+
+temp_audio/
