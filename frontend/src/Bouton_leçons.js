@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import './AppBis.css';
 
 function App() {
     const [selectedFile, setSelectedFile] = useState(null);
@@ -51,8 +52,9 @@ function App() {
     };
 
     return (
-        <div style={{ textAlign: "center", marginTop: "50px" }}>
-            <h1>Upload d'Audio</h1>
+        <div className="entire-page">
+            <h1 className='titre'>Générateur Partition</h1>
+            
             <input
                 type="file"
                 accept=".mp3,.wav,.ogg,.m4a"
@@ -69,5 +71,6 @@ function App() {
         </div>
     );
 }
+
 
 export default App;
