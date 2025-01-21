@@ -3,7 +3,8 @@ import read_midi
 import analyse
 import os
 
-file_name =  "extrait_dodo"
+file_name =  "extrait_dodo_test_front"
+
 
 chemin_extrait = os.path.abspath(os.path.join(os.path.dirname(__file__), f"../audio/{file_name}.wav"))
 
