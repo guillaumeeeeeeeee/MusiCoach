@@ -5,8 +5,7 @@ python-multipart
 uvicorn
 pandas
 pydub
-bisect
-subprocess
+#bisect
+#subprocess
 music21
 reportlab
-

@@ -3,7 +3,7 @@ import bisect
 
 def load_analyse(file_name) :
 
-  data = pd.read_csv(f'/Users/baptisteaudouin/Documents/GitHub/MusiCoach/backend/audios/{file_name}.f0.csv')
+  data = pd.read_csv(f'/Users/baptisteaudouin/Documents/GitHub/MusiCoach/temp_files/audio/{file_name}.f0.csv')
 
   t = data['time']
   freq, conf = data['frequency'], data['confidence']

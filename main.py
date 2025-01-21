@@ -24,12 +24,7 @@ PDF_DIR = TEMP_DIR / "pdf"
 AUDIO_DIR.mkdir(exist_ok=True)
 PDF_DIR.mkdir(exist_ok=True)
 
-def create_pdf(pdf_path, message):
-    """Créer un PDF simple avec un message."""
-    c = canvas.Canvas(str(pdf_path))  # Création de l'objet Canvas
-    c.drawString(100, 750, "Résultats du traitement audio")  # Titre
-    c.drawString(100, 730, message)  # Message principal
-    c.save() 
+
 
 @app.post("/upload-audio/")
 async def upload_audio(file: UploadFile):
