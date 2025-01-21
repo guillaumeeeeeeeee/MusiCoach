@@ -1,10 +1,10 @@
 import pandas as pd
+import os
 import bisect
 
-data = pd.read_csv('/Users/baptisteaudouin/Documents/GitHub/MusiCoach/backend/audios/extrait_dodo.f0.csv')
-
-t = data['time']
-freq, conf = data['frequency'], data['confidence']
+def load_analyse(file_name) :
+  chemin_csv = os.path.abspath(os.path.join(os.path.dirname(__file__), f"../audio/{file_name}.f0.csv"))
+  data = pd.read_csv(chemin_csv)
 
 # Correction de la table des fréquences, notes et octaves
 sorted_frequency_table = [(32.703, 'Do', 1),
