@@ -1,9 +1,12 @@
 import load_crepe
 import read_midi
 import analyse
+import os
 
 file_name =  "extrait_dodo"
 
-load_crepe.function_load_crepe(f"/Users/baptisteaudouin/Documents/GitHub/MusiCoach/backend/audios/{file_name}.wav")
+chemin_extrait = os.path.abspath(os.path.join(os.path.dirname(__file__), f"../audio/{file_name}.wav"))
 
-read_midi.midi_generate(analyse.load_analyse(file_name))
+load_crepe.function_load_crepe(chemin_extrait)
+
+#read_midi.midi_generate(analyse.load_analyse(file_name))
