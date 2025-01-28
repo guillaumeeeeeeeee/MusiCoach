@@ -23,7 +23,4 @@ def midi_to_pdf(midi_file, output_pdf):
     except Exception as e:
         print(f"Erreur lors de l'enregistrement en PDF : {e}")
 
-# Exemple d'utilisation
-midi_file = "/Users/baptisteaudouin/Documents/GitHub/MusiCoach/partition.mid"
-output_pdf = "temp_files/pdf/extrait_dodo_test_front.wav.pdf"
-midi_to_pdf(midi_file, output_pdf)
+

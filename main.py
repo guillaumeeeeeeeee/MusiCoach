@@ -2,8 +2,8 @@ from fastapi import FastAPI, UploadFile, HTTPException
 from fastapi.responses import FileResponse
 from fastapi.middleware.cors import CORSMiddleware
 import os
-from reportlab.pdfgen import canvas
 from pathlib import Path
+from backend.model.main_back_front import finish  # Ton module contenant la fonction `finish`
 
 app = FastAPI()
 
@@ -16,7 +16,7 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
-# Répertoire temporaire 
+# Répertoires temporaires
 TEMP_DIR = Path("temp_files")
 TEMP_DIR.mkdir(exist_ok=True)
 AUDIO_DIR = TEMP_DIR / "audio"
@@ -25,25 +25,28 @@ AUDIO_DIR.mkdir(exist_ok=True)
 PDF_DIR.mkdir(exist_ok=True)
 
 
-
 @app.post("/upload-audio/")
 async def upload_audio(file: UploadFile):
     if not file.filename.endswith((".mp3", ".wav", ".ogg", ".m4a")):
         raise HTTPException(status_code=400, detail="Unsupported file format")
-    
+
+    # Chemins des fichiers
     audio_path = AUDIO_DIR / file.filename
-    pdf_path = PDF_DIR / (file.filename + ".pdf")
+    pdf_path = AUDIO_DIR / (file.filename + ".pdf")  # Même nom que le fichier audio, mais avec extension PDF
 
     try:
         # Sauvegarde temporaire du fichier uploadé
         with open(audio_path, "wb") as buffer:
             buffer.write(await file.read())
 
-        # Création du pdf
-        create_pdf(pdf_path, f"Traitement du fichier audio : {file.filename}")
+        # Génération de la partition et du PDF via `finish`
+        finish(file_name=audio_path.stem)
 
-        
-        # Renvoyer pdf
+        # Vérification que le PDF a bien été généré
+        if not pdf_path.exists():
+            raise HTTPException(status_code=500, detail="PDF file not generated")
+
+        # Renvoyer le PDF généré
         return FileResponse(path=pdf_path, filename=pdf_path.name)
     except Exception as e:
         print(e)
