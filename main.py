@@ -7,7 +7,6 @@ from backend.model.main_back_front import finish  # Ton module contenant la fonc
 
 app = FastAPI()
 
-# Middleware pour autoriser les requêtes CORS
 app.add_middleware(
     CORSMiddleware,
     allow_origins=["*"],
@@ -16,7 +15,7 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
-# Répertoires temporaires
+# Répertoires
 TEMP_DIR = Path("temp_files")
 TEMP_DIR.mkdir(exist_ok=True)
 AUDIO_DIR = TEMP_DIR / "audio"
