@@ -7,6 +7,7 @@ import PageSignUp from "./PageSignUp";
 import PageLogIn from "./PageLogIn";
 import PageAccueil from './PageAccueil';
 import Bouton_leçons from './Bouton_leçons';
+import Upload_Lecon from './Upload_Lecon' ;
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
           <Link to='/PageSignUp'> SignUp</Link>
           <Link to='/'>Page Accueil</Link>
           <Link to='/Bouton_leçons'>Bouton_leçons</Link>
+          <Link to='/Upload_Lecon'>Upload_Lecon</Link>
         </nav>
 
         {/* Configuration des routes */}
@@ -30,6 +32,7 @@ function App() {
           <Route path='/PageLogIn' element={<PageLogIn />} />
           <Route path='/PageSignUp' element={<PageSignUp />} />
           <Route path='/Bouton_leçons' element={<Bouton_leçons />} />
+          <Route path='/Upload_Lecon' element={<Upload_Lecon />} />
         </Routes>
       </div>
     </Router>

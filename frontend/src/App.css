@@ -45,6 +45,10 @@
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   width : 300px;
   margin : 10px auto;
+  color : #f3f2ea ;
+  text-decoration:None ;
+  font-weight: bold;
+  font-size: x-large;
 }
 
 .inscription-btn {
@@ -53,11 +57,13 @@
   border-radius: 10px;
   margin-top: 10px;
   padding: 20px;
-  color :#a8c686;
+  color :#f3f2ea;
   text-align: center;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   width : 300px;
   margin : 10px auto;
+  font-weight: bold;
+  font-size: x-large;
 }
 
 .link-theme {
@@ -166,4 +172,59 @@
   width: 75%;
   height: 75%;
   margin: 0 auto;
+}
+
+.barre {
+  display: flex;
+  width: 385px;
+  height: 44px;
+  justify-content: center;
+  align-items: center;
+  flex-shrink: 0;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  padding: 5px;
+  font-size: 16px;
+  margin: 10px 0;
+  justify-content: center;
+  align-items: center;
+  background-color: #fff;
+}
+
+.barre input {
+  width: 100%;
+  border: none;
+  outline: none;
+}
+
+.container-connexion {
+  margin-left: 100px;
+  margin-top: 100px;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  height: 70vh;
+  width: 1200px;
+  border-radius: 30px;
+  border: 3px solid #3A3A3A;
+  background: #F4D081;
+  box-shadow: 3px 6px 6px 3px rgba(0, 0, 0, 0.25);
+}
+
+.container-inscription {
+  margin-left: 100px;
+  margin-top: 100px;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  height: 70vh;
+  width: 1200px;
+  border-radius: 30px;
+  border: 3px solid #3A3A3A;
+  background: #D5E8BF;
+  box-shadow: 3px 6px 6px 3px rgba(0, 0, 0, 0.25);
 }

@@ -13,32 +13,36 @@ const PageSignUp = () => {
       await signUp(email, password);
       alert("Inscription réussie !");
       // Rediriger vers la page de connexion après l'inscription
-      navigate("/");
+      navigate("/PageLogIn");
     } catch (error) {
       alert(error.message);
     }
   };
 
   return (
-    <div>
-      <h2>Inscription</h2>
+    <div className='container-inscription'>
+    <h2 className='titre'>Inscription</h2>
+    <div className="barre">
       <input
         type="email"
         placeholder="Email"
         value={email}
         onChange={(e) => setEmail(e.target.value)}
       />
+    </div>
+    <div className="barre">
       <input
         type="password"
         placeholder="Mot de passe"
         value={password}
         onChange={(e) => setPassword(e.target.value)}
       />
-      <button onClick={handleSignUp}>S'inscrire</button>
-      <p>
-        Déjà inscrit ? <a href="/">Se connecter</a>
-      </p>
     </div>
+    <button className="inscription-btn" onClick={handleSignUp}>S'inscrire</button>
+    <p>
+      Déjà inscrit ? <a href="/PageLogIn">Se connecter</a>
+    </p>
+  </div>
   );
 };
 

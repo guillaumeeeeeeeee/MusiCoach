@@ -13,30 +13,34 @@ const PageLogIn = () => {
       await logIn(email, password);
       alert("Connexion réussie !");
       // Rediriger vers une autre page (par exemple, tableau de bord)
-      navigate("/dashboard"); 
+      navigate("/PagePrincipale"); 
     } catch (error) {
       alert(error.message);
     }
   };
 
   return (
-    <div>
-      <h2>Connexion</h2>
-      <input
-        type="email"
-        placeholder="Email"
-        value={email}
-        onChange={(e) => setEmail(e.target.value)}
-      />
-      <input
-        type="password"
-        placeholder="Mot de passe"
-        value={password}
-        onChange={(e) => setPassword(e.target.value)}
-      />
-      <button onClick={handleLogIn}>Se connecter</button>
+    <div className='container-connexion'>
+      <h2 className='titre'>Connexion</h2>
+      <div className="barre">
+        <input
+          type="email"
+          placeholder="Email"
+          value={email}
+          onChange={(e) => setEmail(e.target.value)}
+        />
+      </div>
+      <div className="barre">
+        <input
+          type="password"
+          placeholder="Mot de passe"
+          value={password}
+          onChange={(e) => setPassword(e.target.value)}
+        />
+      </div>
+      <button className="connexion-btn" onClick={handleLogIn}>Se connecter</button>
       <p>
-        Pas encore inscrit ? <a href="/signup">Créer un compte</a>
+        Pas encore inscrit ? <a href="/PageSignUp">Créer un compte</a>
       </p>
     </div>
   );
