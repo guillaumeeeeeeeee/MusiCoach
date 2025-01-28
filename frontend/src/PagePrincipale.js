@@ -54,7 +54,7 @@ function ImageMap({ titre, id }) {
             shape="circle"
             coords="351,189,23"
             alt="Zone 1"
-            href="https://www.apprendrelesolfege.com/clef-de-sol"
+            href="/upload_lecon"
             target="_blank"
           />
           <area
@@ -117,7 +117,7 @@ function BarreLaterale({ toggleVisibility, isVisible }) {
       />
       <ImageBarre image={HomePage} link="/PagePrincipale" NouvellePage="PagePrincipale" />
       <ImageBarre image={Challenges} link="https://www.larousse.fr/dictionnaires/francais/challenge/14488" NouvellePage="Challenges" />
-      <ImageBarre image={Composer} link="/Bouton_leçons" NouvellePage="Composer" />
+      <ImageBarre image={Composer} link="/generateur_partition" NouvellePage="Composer" />
       <ImageBarre image={Bibliothèque} link="https://www.larousse.fr/dictionnaires/francais/bibliothèque/9064" NouvellePage="Bibliothèque" />
       <ImageBarre image={Profil} link="/PageProfil" NouvellePage="Profil" />
     </div>
