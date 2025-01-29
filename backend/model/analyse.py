@@ -4,7 +4,7 @@ import os
 
 def load_analyse(file_name) :
 
-  chemin_csv = os.path.abspath(os.path.join(os.path.dirname(__file__),f"../audio/{file_name}.f0.csv"))
+  chemin_csv = os.path.abspath(os.path.join(os.path.dirname(__file__),f"../../temp_files/audio/{file_name}.f0.csv"))
   data = pd.read_csv(chemin_csv)
   
   t = data['time']
