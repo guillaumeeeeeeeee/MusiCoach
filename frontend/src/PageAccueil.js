@@ -1,6 +1,4 @@
 import './App.css';
-import {Link} from 'react-router-dom';
-import { useState } from 'react';
 import Logo from './Images/LogoAccueil.png';
 
 function BoutonInscription({ titre, link }) {

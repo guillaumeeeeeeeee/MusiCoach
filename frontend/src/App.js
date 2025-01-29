@@ -6,8 +6,9 @@ import PageProfil from './PageProfil';
 import PageSignUp from "./PageSignUp";
 import PageLogIn from "./PageLogIn";
 import PageAccueil from './PageAccueil';
-import Bouton_leçons from './Bouton_leçons';
-import Upload_Lecon from './Upload_Lecon' ;
+import BoutonLecons from './BoutonLecons';
+import UploadLecon from './UploadLecon' ;
+import LeconDodo from './LeconDodo' ;
 
 function App() {
   return (
@@ -20,8 +21,9 @@ function App() {
           <Link to='/PageLogIn'> LogIn</Link>
           <Link to='/PageSignUp'> SignUp</Link>
           <Link to='/'>Page Accueil</Link>
-          <Link to='/Bouton_leçons'>Bouton_leçons</Link>
-          <Link to='/Upload_Lecon'>Upload_Lecon</Link>
+          <Link to='/BoutonLecons'>BoutonLecons</Link>
+          <Link to='/UploadLecon'>UploadLecon</Link>
+          <Link to='/LeconDodo'>LeconDodo</Link>
         </nav>
 
         {/* Configuration des routes */}
@@ -31,8 +33,9 @@ function App() {
           <Route path='/PageProfil' element={<PageProfil />} />
           <Route path='/PageLogIn' element={<PageLogIn />} />
           <Route path='/PageSignUp' element={<PageSignUp />} />
-          <Route path='/Bouton_leçons' element={<Bouton_leçons />} />
-          <Route path='/Upload_Lecon' element={<Upload_Lecon />} />
+          <Route path='/BoutonLecons' element={<BoutonLecons />} />
+          <Route path='/UploadLecon' element={<UploadLecon />} />
+          <Route path='/LeconDodo' element={<LeconDodo />} />
         </Routes>
       </div>
     </Router>
