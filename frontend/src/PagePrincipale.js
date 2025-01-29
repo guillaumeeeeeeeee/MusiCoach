@@ -54,22 +54,19 @@ function ImageMap({ titre, id }) {
             shape="circle"
             coords="351,189,23"
             alt="Zone 1"
-            href="/upload_lecon"
-            target="_blank"
+            href="/LeconDodo"
           />
           <area
             shape="circle"
             coords="568,106,22"
             alt="Zone 2"
             href="https://www.apprendrelesolfege.com/clef-de-fa"
-            target="_blank"
           />
           <area
             shape="circle"
             coords="863,148,26"
             alt="Zone 3"
             href="https://www.apprendrelesolfege.com/clef-d-ut"
-            target="_blank"
           />
         </map>
       </div>
@@ -117,7 +114,7 @@ function BarreLaterale({ toggleVisibility, isVisible }) {
       />
       <ImageBarre image={HomePage} link="/PagePrincipale" NouvellePage="PagePrincipale" />
       <ImageBarre image={Challenges} link="https://www.larousse.fr/dictionnaires/francais/challenge/14488" NouvellePage="Challenges" />
-      <ImageBarre image={Composer} link="/generateur_partition" NouvellePage="Composer" />
+      <ImageBarre image={Composer} link="/BoutonLecons" NouvellePage="Composer" />
       <ImageBarre image={Bibliothèque} link="https://www.larousse.fr/dictionnaires/francais/bibliothèque/9064" NouvellePage="Bibliothèque" />
       <ImageBarre image={Profil} link="/PageProfil" NouvellePage="Profil" />
     </div>
