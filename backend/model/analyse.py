@@ -4,7 +4,7 @@ import os
 
 def load_analyse(file_name) :
 
-  chemin_csv = os.path.abspath(os.path.join(os.path.dirname(__file__),f"../../temp_files/audio/{file_name}.f0.csv"))
+  chemin_csv = os.path.abspath(os.path.join(os.path.dirname(__file__),f"../audio/{file_name}.f0.csv"))
   data = pd.read_csv(chemin_csv)
   
   t = data['time']
@@ -164,7 +164,7 @@ def load_analyse(file_name) :
 
   #chutes de confiances
   temps = [0.00]
-  chute_confiance = 0.7
+  chute_confiance = 0.9
   for i in range(len(t)) :
     if conf[i] < chute_confiance :
       temps.append(t[i])
@@ -182,7 +182,9 @@ def load_analyse(file_name) :
   mapped_notes = [frequency_dict[freq] for freq in frequences_closet]
   interval = [round(temps[i+1]-temps[i]) for i in range(len(temps)-1)]
 
-
-  partition_notes = [(frequences_closet[i], interval[i]) for i in range(len(mapped_notes))]
+  partition_notes = []
+  for i in range(len(mapped_notes)) :
+     if interval[i] != 0 :
+      partition_notes.append((frequences_closet[i], interval[i]))
   
   return partition_notes

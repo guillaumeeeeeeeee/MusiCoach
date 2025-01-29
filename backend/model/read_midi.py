@@ -80,15 +80,6 @@ def generate_partition_from_frequencies(frequencies_with_durations):
             partition.append((note_name, duration))
     return partition
 
-# Liste d'exemple de (fréquence, durée)
-frequencies_with_durations = [(329.628, 2), (261.626, 2), (329.628, 1), (329.628, 1),
-                              (261.626, 2), (293.665, 1), (329.628, 1), (349.228, 1), 
-                              (329.628, 1), (293.665, 1), (391.995, 1), (329.628, 2), 
-                              (261.626, 2), (329.628, 2), (261.626, 2), (329.628, 1), 
-                              (329.628, 1), (261.626, 2), (293.665, 1), (329.628, 1), 
-                              (349.228, 1), (329.628, 1), (293.665, 1), (391.995, 1), 
-                              (261.626, 4)]
-
 
 def midi_generate(frequencies_with_durations) :
     # Générer la partition
@@ -120,5 +111,3 @@ def midi_generate(frequencies_with_durations) :
     # Exporter en fichier MusicXML (pour afficher avec MuseScore, par exemple)
     #partition.write('musicxml', fp='partition.xml')
     
-    
-midi_generate(frequencies_with_durations)
