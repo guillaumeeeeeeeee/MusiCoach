@@ -60,13 +60,13 @@ function ImageMap({ titre, id }) {
             shape="circle"
             coords="568,106,22"
             alt="Zone 2"
-            href="https://www.apprendrelesolfege.com/clef-de-fa"
+            href="/LeconDeux"
           />
           <area
             shape="circle"
             coords="863,148,26"
             alt="Zone 3"
-            href="https://www.apprendrelesolfege.com/clef-d-ut"
+            href="LeconTrois"
           />
         </map>
       </div>

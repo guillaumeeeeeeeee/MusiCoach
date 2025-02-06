@@ -8,7 +8,8 @@ import Bibliothèque from './Images/records-btn.png';
 import Profil from './Images/profil-btn.png';
 import Menu from './Images/Bouton_menu.png';
 import Retour from './Images/Retour.png';
-import ProfileCard from './Images/ProfileCard.png';
+import Dodo from './Images/Dodo.jpg';
+
 
 function ImageBarre({ image, link, NouvellePage}) {
   return (
@@ -67,21 +68,20 @@ function ImageBarre({ image, link, NouvellePage}) {
     );
   }
 
-  function InfoProfil({ prenom, nom, username, datenaissance, pays, mail, telephone }) {
+  function Partition() {
     return (
-      <div className="image-fond-profil">
-        <img src={ProfileCard} alt="Cadre" className="background-profil" />
-        <div className="texte-profil">
-          <h1 className="nom-profil">{prenom}</h1>
-          <p className="nom-profil">{nom}</p>
-          <br />
-          <br />
-          <p className="info-profil">{username}</p>
-          <p className="info-profil">{datenaissance}</p>
-          <p className="info-profil">{pays}</p>
-          <p className="info-profil">{mail}</p>
-          <p className="info-profil">{telephone}</p>
-        </div>
+      <div>
+        <img src={Dodo} alt="partition" className='partition' />
+      </div>
+    );
+  }
+
+  function BoutonConnexion({ titre, link }) {
+    return (
+      <div className="connexion-btn">
+        <a href={link} className="link-accueil">
+          {titre}
+        </a>
       </div>
     );
   }
@@ -91,8 +91,9 @@ function ImageBarre({ image, link, NouvellePage}) {
     return(
       <div className='entire-page'>
         <ToggleElement></ToggleElement>
-        <h1 className="titre">Mon Profil</h1>
-        <InfoProfil nom="Maroni" prenom="Isée" username="isée.maroni" datenaissance="01/01/2000" pays="France" mail="isée.maroni@gmail.com" telephone="+33 7 68 12 53 21" />
+        <h1 className="titre">Leçon 2</h1>
+        <Partition></Partition>
+        <BoutonConnexion titre="Vérification" link="/UploadLecon"></BoutonConnexion>
       </div>
     );
   }

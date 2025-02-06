@@ -9,6 +9,8 @@ import PageAccueil from './PageAccueil';
 import BoutonLecons from './BoutonLecons';
 import UploadLecon from './UploadLecon' ;
 import LeconDodo from './LeconDodo' ;
+import LeconDeux from './LeconDeux' ;
+import LeconTrois from './LeconTrois' ;
 
 function App() {
   return (
@@ -24,6 +26,8 @@ function App() {
           <Link to='/BoutonLecons'>BoutonLecons</Link>
           <Link to='/UploadLecon'>UploadLecon</Link>
           <Link to='/LeconDodo'>LeconDodo</Link>
+          <Link to='/LeconDeux'>LeconDeux</Link>
+          <Link to='/LeconTrois'>LeconTrois</Link>
         </nav>
 
         {/* Configuration des routes */}
@@ -36,6 +40,8 @@ function App() {
           <Route path='/BoutonLecons' element={<BoutonLecons />} />
           <Route path='/UploadLecon' element={<UploadLecon />} />
           <Route path='/LeconDodo' element={<LeconDodo />} />
+          <Route path='/LeconDeux' element={<LeconDeux />} />
+          <Route path='/LeconTrois' element={<LeconTrois />} />
         </Routes>
       </div>
     </Router>
