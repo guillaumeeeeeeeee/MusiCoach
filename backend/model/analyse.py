@@ -2,6 +2,10 @@ import pandas as pd
 import bisect
 import os
 
+def arrondir(temps):
+    arrondi = round(temps*2)/2
+    return (arrondi)
+
 def load_analyse(file_name) :
 
   chemin_csv = os.path.abspath(os.path.join(os.path.dirname(__file__),f"../audio/{file_name}.f0.csv"))
@@ -164,7 +168,7 @@ def load_analyse(file_name) :
 
   #chutes de confiances
   temps = [0.00]
-  chute_confiance = 0.9
+  chute_confiance = 0.85
   for i in range(len(t)) :
     if conf[i] < chute_confiance :
       temps.append(t[i])
@@ -180,7 +184,7 @@ def load_analyse(file_name) :
   frequences = [temps_frequence[t] for t in tps_freq if t in temps_frequence]
   frequences_closet = [find_closest_value(freqs_notes_match, f) for f in frequences]
   mapped_notes = [frequency_dict[freq] for freq in frequences_closet]
-  interval = [round(temps[i+1]-temps[i]) for i in range(len(temps)-1)]
+  interval = [arrondir(temps[i+1]-temps[i]) for i in range(len(temps)-1)]
 
   partition_notes = []
   for i in range(len(mapped_notes)) :

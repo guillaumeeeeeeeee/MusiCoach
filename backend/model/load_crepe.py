@@ -1,10 +1,8 @@
 import subprocess
 
 def function_load_crepe(wave_file):
-    # Commande à exécuter
-    commande = ["crepe", wave_file, "--step-size", "40"]
+    commande = ["crepe", wave_file, "--step-size", "20"]
 
-    # Exécution de la commande
     try:
         subprocess.run(commande, check=True)
         print("Commande exécutée avec succès !")

@@ -16,7 +16,7 @@ print(a)
 read_midi.midi_generate(a)
     
 midi_file = os.path.abspath(os.path.join(os.path.dirname(__file__),"/partition.mid"))
-output_pdf = os.path.abspath(os.path.join(os.path.dirname(__file__),"recieve_files/pdf/extrait_dodo_test_front.pdf"))
+output_pdf = os.path.abspath(os.path.join(os.path.dirname(__file__),f"receive_files/pdf/{file_name}.pdf"))
     
 mid_pdf.midi_to_pdf(midi_file, output_pdf)
 

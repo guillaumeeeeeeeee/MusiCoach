@@ -3,7 +3,7 @@ from fastapi.responses import FileResponse
 from fastapi.middleware.cors import CORSMiddleware
 import os
 from pathlib import Path
-from backend.model.main_back_front import finish  # Ton module contenant la fonction `finish`
+from backend.model.main_back_front import finish  
 
 app = FastAPI()
 

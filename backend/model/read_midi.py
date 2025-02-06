@@ -91,7 +91,7 @@ def midi_generate(frequencies_with_durations) :
     partition = stream.Stream()
 
     # Ajouter un tempo (par exemple, 120 battements par minute)
-    partition.append(tempo.MetronomeMark(number=120))
+    partition.append(tempo.MetronomeMark(number=80))
 
     # Ajouter une mesure (par exemple, en 4/4)
     partition.append(meter.TimeSignature('4/4'))
