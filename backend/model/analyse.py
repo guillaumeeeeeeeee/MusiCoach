@@ -168,7 +168,7 @@ def load_analyse(file_name) :
 
   #chutes de confiances
   temps = [0.00]
-  chute_confiance = 0.85
+  chute_confiance = 0.8
   for i in range(len(t)) :
     if conf[i] < chute_confiance :
       temps.append(t[i])
