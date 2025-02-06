@@ -35,7 +35,7 @@ function ImageBarre({ image, link, NouvellePage}) {
         />
         <ImageBarre image={HomePage} link="/PagePrincipale" NouvellePage="PagePrincipale" />
         <ImageBarre image={Challenges} link="https://www.larousse.fr/dictionnaires/francais/challenge/14488" NouvellePage="Challenges" />
-        <ImageBarre image={Composer} link="BoutonLecons" NouvellePage="Composer" />
+        <ImageBarre image={Composer} link="/BoutonLecons" NouvellePage="Composer" />
         <ImageBarre image={Bibliothèque} link="https://www.larousse.fr/dictionnaires/francais/bibliothèque/9064" NouvellePage="Bibliothèque" />
         <ImageBarre image={Profil} link="/PageProfil" NouvellePage="Profil" />
       </div>
