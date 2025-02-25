@@ -31,7 +31,7 @@ function App() {
 
         setIsUploading(true); // Indicate upload is in progress
 
-        fetch("http://127.0.0.1:8000/upload-audio/", {
+        fetch("http://127.0.0.1:8000/upload-lecon/", {
             method: "POST",
             body: formData,
         })
