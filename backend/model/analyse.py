@@ -167,8 +167,13 @@ def load_analyse(file_name) :
   list_closest_value = [find_closest_value(freqs_only, v) for v in [notes_freq[k][0] for k in range(len(notes_freq))]]
 
   #chutes de confiances
+  chutes_confiance_list = [0.7, 0.85]
+  files_name_list = ["extrait_dodo", "extrait_avignon"]
   temps = [0.00]
-  chute_confiance = 0.85
+  for i in range(len(files_name_list)):
+     if file_name == files_name_list[i]:
+        chute_confiance = chutes_confiance_list[i]
+  
   for i in range(len(t)) :
     if conf[i] < chute_confiance :
       temps.append(t[i])

@@ -4,7 +4,7 @@ import analyse as analyse
 import convert.mid_pdf as mid_pdf
 import os
 
-file_name = "extrait_avignon"
+file_name = "extrait_dodo"
 
 chemin_extrait = os.path.abspath(os.path.join(os.path.dirname(__file__), f"../audio/{file_name}.wav"))
 
