@@ -11,12 +11,12 @@ def finish(file_name):
 
     load_crepe.function_load_crepe(chemin_extrait, file_name)
 
-    read_midi.midi_generate(analyse.load_analyse(file_name))
+    read_midi.midi_generate(analyse.load_analyse(file_name), file_name)
     
     midi_file = os.path.abspath(os.path.join(os.path.dirname(__file__),"../../partition.mid"))
-    output_pdf = f"temp_files/audio/{file_name}.wav.pdf"
+    output_pdf = f"temp_files/audio/{file_name}.pdf"
     
-    mid_pdf.midi_to_pdf(midi_file, output_pdf)
+    mid_pdf.midi_to_pdf(midi_file, output_pdf, file_name)
 
 
 def scoring(file_name):

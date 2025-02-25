@@ -1,4 +1,4 @@
-from music21 import stream, note, meter, tempo
+from music21 import stream, note, meter, tempo, metadata
 
 # Exemple de liste de notes : chaque note est définie par son nom (et octave facultative)
 # 'C4' correspond au Do au centre du piano, 'D#4' est le Ré# à la même octave, 'E4', etc.
@@ -81,7 +81,7 @@ def generate_partition_from_frequencies(frequencies_with_durations):
     return partition
 
 
-def midi_generate(frequencies_with_durations) :
+def midi_generate(frequencies_with_durations, file_name) :
     # Générer la partition
     notes_matches = generate_partition_from_frequencies(frequencies_with_durations)
 
@@ -102,8 +102,13 @@ def midi_generate(frequencies_with_durations) :
         nouvelle_note.quarterLength = temps  # Durée de la note (1 correspond à une noire)
         partition.append(nouvelle_note)
 
+    partition.metadata = metadata.Metadata()
+    formatted_title = file_name.replace("_", " ").title()
+    partition.metadata.title = formatted_title
+    partition.metadata.composer = "MusiCoach"
+
     # Afficher la partition (dans un logiciel compatible)
-    partition.show()
+    #partition.show()
 
     # Exporter en fichier MIDI
     partition.write('midi', fp='partition.mid')

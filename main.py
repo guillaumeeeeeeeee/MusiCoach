@@ -42,6 +42,7 @@ async def upload_audio(file: UploadFile):
         # Génération de la partition et du PDF via `finish`
         finish(file_name=audio_path.stem)
 
+
         # Vérification que le PDF a bien été généré
         if not pdf_path.exists():
             raise HTTPException(status_code=500, detail="PDF file not generated")
