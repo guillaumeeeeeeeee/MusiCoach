@@ -1,8 +1,8 @@
 import subprocess
 
 def function_load_crepe(wave_file, file_name):
-    step_size_list = ["40", "20"]
-    files_name_list = ["extrait_dodo", "extrait_avignon"]
+    step_size_list = ["40", "20", "20"]
+    files_name_list = ["extrait_dodo", "extrait_avignon", "miaou_miaou"]
     for i in range(len(files_name_list)):
      if file_name == files_name_list[i]:
         step_size = step_size_list[i]
