@@ -54,19 +54,19 @@ function ImageMap({ titre, id }) {
             shape="circle"
             coords="351,189,23"
             alt="Zone 1"
-            href="/LeconDodo"
+            href="/UploadLecon"
           />
           <area
             shape="circle"
             coords="568,106,22"
             alt="Zone 2"
-            href="/LeconDeux"
+            href="/UploadLecon2"
           />
           <area
             shape="circle"
             coords="863,148,26"
             alt="Zone 3"
-            href="LeconTrois"
+            href="UploadLecon3"
           />
         </map>
       </div>

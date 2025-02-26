@@ -22,7 +22,7 @@ def midi_to_pdf(midi_file, output_pdf, file_name):
 
     # Exporter en PDF
     try:
-        midi_stream.write('pdf', output_pdf)
+        midi_stream.write('musicxml.pdf', output_pdf)
         print(f"Partition enregistrée sous : {output_pdf}")
     except Exception as e:
         print(f"Erreur lors de l'enregistrement en PDF : {e}")

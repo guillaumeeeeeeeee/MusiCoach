@@ -169,6 +169,7 @@ def load_analyse(file_name) :
   #chutes de confiances
   chutes_confiance_list = [0.7, 0.85, 0.92]
   files_name_list = ["extrait_dodo", "extrait_avignon", "miaou_miaou"]
+  chute_confiance = 0.8
   temps = [0.00]
   for i in range(len(files_name_list)):
      if file_name == files_name_list[i]:

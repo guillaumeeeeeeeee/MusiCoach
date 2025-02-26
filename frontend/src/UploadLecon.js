@@ -8,6 +8,7 @@ import Bibliothèque from './Images/records-btn.png';
 import Profil from './Images/profil-btn.png';
 import Menu from './Images/Bouton_menu.png';
 import Retour from './Images/Retour.png';
+import Dodo from './Images/Dodo.jpg';
 
 
 function App() {
@@ -117,9 +118,18 @@ function App() {
         );
       }   
 
+  function Partition() {
+    return (
+      <div>
+        <img src={Dodo} alt="partition" className='partition' />
+      </div>
+    );
+  }
+
     return (
         <div className="entire-page">
-            <h1 className='titre'>Vérifier mon morceau</h1>
+            <h1 className='titre'>Dodo l'enfant Do</h1>
+            <Partition></Partition>
             <ToggleElement></ToggleElement>
             
             <input

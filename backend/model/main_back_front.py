@@ -22,7 +22,7 @@ def finish(file_name):
 def scoring(file_name):
     chemin_extrait = os.path.abspath(os.path.join(os.path.dirname(__file__), f"../../temp_files/audio/{file_name}.wav"))
 
-    load_crepe.function_load_crepe(chemin_extrait)
+    load_crepe.function_load_crepe(chemin_extrait, file_name)
 
     user_list = analyse.load_analyse(file_name)
     

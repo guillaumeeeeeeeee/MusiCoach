@@ -27,12 +27,12 @@ PDF_DIR.mkdir(exist_ok=True)
 
 @app.post("/upload-audio/")
 async def upload_audio(file: UploadFile):
-    if not file.filename.endswith((".mp3", ".wav", ".ogg", ".m4a")):
+    if not file.filename.endswith(".wav"):
         raise HTTPException(status_code=400, detail="Unsupported file format")
 
     # Chemins des fichiers
     audio_path = AUDIO_DIR / file.filename
-    pdf_path = AUDIO_DIR / (file.filename + ".pdf")  # Même nom que le fichier audio, mais avec extension PDF
+    pdf_path = AUDIO_DIR / (audio_path.stem + ".pdf")
 
     try:
         # Sauvegarde temporaire du fichier uploadé

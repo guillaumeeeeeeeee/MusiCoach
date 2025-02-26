@@ -8,7 +8,7 @@ import Bibliothèque from './Images/records-btn.png';
 import Profil from './Images/profil-btn.png';
 import Menu from './Images/Bouton_menu.png';
 import Retour from './Images/Retour.png';
-import Dodo from './Images/Dodo.jpg';
+import Avignon from './Images/avignon.png';
 
 
 function ImageBarre({ image, link, NouvellePage}) {
@@ -71,7 +71,7 @@ function ImageBarre({ image, link, NouvellePage}) {
   function Partition() {
     return (
       <div>
-        <img src={Dodo} alt="partition" className='partition' />
+        <img src={Avignon} alt="partition" className='partition' />
       </div>
     );
   }
@@ -91,7 +91,7 @@ function ImageBarre({ image, link, NouvellePage}) {
     return(
       <div className='entire-page'>
         <ToggleElement></ToggleElement>
-        <h1 className="titre">Leçon 2</h1>
+        <h1 className="titre">Sur le pont d'Avignon</h1>
         <Partition></Partition>
         <BoutonConnexion titre="Vérification" link="/UploadLecon"></BoutonConnexion>
       </div>

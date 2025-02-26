@@ -8,7 +8,7 @@ import Bibliothèque from './Images/records-btn.png';
 import Profil from './Images/profil-btn.png';
 import Menu from './Images/Bouton_menu.png';
 import Retour from './Images/Retour.png';
-import Dodo from './Images/Dodo.jpg';
+import Miaou from './Images/miaou_miaou.png';
 
 
 function ImageBarre({ image, link, NouvellePage}) {
@@ -71,7 +71,7 @@ function ImageBarre({ image, link, NouvellePage}) {
   function Partition() {
     return (
       <div>
-        <img src={Dodo} alt="partition" className='partition' />
+        <img src={Miaou} alt="partition" className='partition' />
       </div>
     );
   }
@@ -91,7 +91,7 @@ function ImageBarre({ image, link, NouvellePage}) {
     return(
       <div className='entire-page'>
         <ToggleElement></ToggleElement>
-        <h1 className="titre">Leçon 3</h1>
+        <h1 className="titre">What was I made for (miaou version)</h1>
         <Partition></Partition>
         <BoutonConnexion titre="Vérification" link="/UploadLecon"></BoutonConnexion>
       </div>
