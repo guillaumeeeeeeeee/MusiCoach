@@ -32,7 +32,7 @@ function App() {
 
         setIsUploading(true); // Indicate upload is in progress
 
-        fetch("http://127.0.0.1:8000/upload-lecon/", {
+        fetch("http://127.0.0.1:8000/upload-lecon2/", {
             method: "POST",
             body: formData,
         })
@@ -47,7 +47,8 @@ function App() {
                 const url = window.URL.createObjectURL(blob);
                 const link = document.createElement("a");
                 link.href = url;
-                link.setAttribute("download", "resultat.pdf"); // Use the same name as uploaded
+                const originalFileName = selectedFile.name.split('.').slice(0, -1).join('.'); // Retire l'extension
+                link.setAttribute("download", `${originalFileName}_score.pdf`); // Use the same name as uploaded
                 document.body.appendChild(link);
                 link.click();
                 link.remove();
