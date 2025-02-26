@@ -35,14 +35,14 @@ def generate_analysis_pdf(user_list, file_name):
         total_justesse += freq_diff
         total_tempo += dur_diff
         
-        if freq_diff > 5:
+        if freq_diff > 3:
             justesse_errors.append((i+1, ref_freq, user_freq))
         if dur_diff > 0.2:
             tempo_errors.append((i+1, ref_dur, user_dur))
 
     # Calcul des scores
     justesse_score = max(0, 100 - (total_justesse / n))
-    tempo_score = max(0, 100 - (total_tempo / n * 10))
+    tempo_score = max(0, 100 - 5*(total_tempo / n * 10))
     
     # Chemin de sortie du PDF
     output_pdf = f"temp_files/audio/{file_name}.wav.pdf"
