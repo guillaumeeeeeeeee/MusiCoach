@@ -108,7 +108,7 @@ def midi_generate(frequencies_with_durations, file_name) :
     partition.metadata.composer = "MusiCoach"
 
     # Afficher la partition (dans un logiciel compatible)
-    partition.show()
+    #partition.show()
 
     # Exporter en fichier MIDI
     partition.write('midi', fp='partition.mid')
